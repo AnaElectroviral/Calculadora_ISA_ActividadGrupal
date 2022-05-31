@@ -23,6 +23,6 @@ public class Calculadora {
         return Math.sqrt(numero1);
     }
     public double exponente(double base, double exponente) {
-        return 0;
+        return Math.pow(base, exponente);
     }
 }
