@@ -93,7 +93,7 @@ class CalculadoraTest {
         //given
         // la calculadora y datos de los numeros
         final double base=3;
-        double exponente=5;
+        double exponente=3;
         double result=1;
         final Calculadora calculadora = new Calculadora();
         //when
@@ -102,7 +102,7 @@ class CalculadoraTest {
         // then
         // el resultado deberia ser el esperado.
         while (exponente != 0){
-            result = calculadora.multiplicar(result,exponente);
+            result = calculadora.multiplicar(result,base);
             exponente = calculadora.restar(exponente,1);
         }
         final double expected = result;
