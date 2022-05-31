@@ -27,7 +27,7 @@ class CalculadoraTest {
         final double numero2=5;
         final Calculadora calculadora = new Calculadora();
         //when
-        // sumo los numeros
+        // resto los numeros
         final double resultado = calculadora.restar(numero1,numero2);
         // then
         // el resultado deberia ser el esperado.
@@ -43,7 +43,7 @@ class CalculadoraTest {
         final double numero2=5;
         final Calculadora calculadora = new Calculadora();
         //when
-        // sumo los numeros
+        // multiplico los numeros
         final double resultado = calculadora.multiplicar(numero1,numero2);
         // then
         // el resultado deberia ser el esperado.
@@ -58,7 +58,7 @@ class CalculadoraTest {
         final double numero2=5;
         final Calculadora calculadora = new Calculadora();
         //when
-        // sumo los numeros
+        // divido los numeros
         final double resultado = calculadora.dividir(numero1,numero2);
         // then
         // el resultado deberia ser el esperado.
@@ -74,7 +74,7 @@ class CalculadoraTest {
         double t;
         final Calculadora calculadora = new Calculadora();
         //when
-        // sumo los numeros
+        // hago la raiz de los numeros
         final double resultado = calculadora.raiz(numero1);
         // then
         // el resultado deberia ser el esperado.
