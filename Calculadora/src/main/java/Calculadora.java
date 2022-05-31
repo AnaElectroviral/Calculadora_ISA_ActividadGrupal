@@ -22,4 +22,7 @@ public class Calculadora {
     public double raiz(double numero1) {
         return Math.sqrt(numero1);
     }
+    public double exponente(double base, double exponente) {
+        return 0;
+    }
 }
