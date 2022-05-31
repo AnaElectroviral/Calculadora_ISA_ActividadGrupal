@@ -88,4 +88,24 @@ class CalculadoraTest {
         final double expected = square;
         assertEquals(expected,resultado);
     }
+    @Test
+    public void deberia_calcular_exponente_numeros(){
+        //given
+        // la calculadora y datos de los numeros
+        final double base=3;
+        double exponente=5;
+        double result=1;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // hago el exponente de los numeros
+        final double resultado = calculadora.exponente(base,exponente);
+        // then
+        // el resultado deberia ser el esperado.
+        while (exponente != 0){
+            result = calculadora.multiplicar(result,exponente);
+            exponente = calculadora.restar(exponente,1);
+        }
+        final double expected = result;
+        assertEquals(expected,resultado);
+    }
 }
