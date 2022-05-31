@@ -50,5 +50,19 @@ class CalculadoraTest {
         final double expected = numero1 * numero2;
         assertEquals(expected,resultado);
     }
-
+    @Test
+    public void deberia_dividir_numeros(){
+        //given
+        // la calculadora y datos de los numeros
+        final double numero1=3;
+        final double numero2=5;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // sumo los numeros
+        final double resultado = calculadora.dividir(numero1,numero2);
+        // then
+        // el resultado deberia ser el esperado.
+        final double expected = numero1 / numero2;
+        assertEquals(expected,resultado);
+    }
 }
