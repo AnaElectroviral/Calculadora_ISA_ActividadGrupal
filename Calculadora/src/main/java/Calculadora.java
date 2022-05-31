@@ -1,3 +1,4 @@
+import java.util.*;
 public class Calculadora {
     public Calculadora(){
 
@@ -19,6 +20,6 @@ public class Calculadora {
         return numero1 / numero2;
     }
     public double raiz(double numero1) {
-        return numero1;
+        return Math.sqrt(numero1);
     }
 }
