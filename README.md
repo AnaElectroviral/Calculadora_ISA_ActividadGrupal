@@ -4,7 +4,7 @@
 
 En esta actividad grupal realizaremos una calculadora con la metodología TDD.
 
-Usaremos un lenguaje java y para los test usaremos Test Runner for Java.
+Usaremos un lenguaje ava y para los test usaremos Junit.
 
 La aplicación consiste de una sencilla calculadora capaz de realizar las siguientes operaciones:
 
@@ -13,6 +13,7 @@ La aplicación consiste de una sencilla calculadora capaz de realizar las siguie
 * Multiplicación
 * División
 * Raíz
+* Exponente
 
 # SUMA #
 
@@ -32,12 +33,14 @@ El test para resolver la suma:
         // el resultado deberia ser el esperado.
         final double expected = numero1 + numero2;
         assertEquals(expected,resultado);
+[public void deberia_sumar_numeros(){](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/03af8c086b3232ba8e15f74ee76ee114fb20a64f/Calculadora/src/test/java/CalculadoraTest.java#L7-L21)
 
 Y la implementación del códio final de la suma sería:
 
     public double sumar(double numero1, double numero2) {
         return numero1 + numero2;
     } 
+[public double sumar(double numero1, double numero2) {](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/d2bfb803e08ab52d2d3cf0236bf5ab5a1f624a82/Calculadora/src/main/java/Calculadora.java#L8-L10)
 
 # RESTA #
 
@@ -69,14 +72,120 @@ Y la implementación quedaría de la siguiente manera:
 
 # MULTIPLICACIÓN #
 
+Test para resolver la multiplicación:
 
+    public void deberia_multiplicar_numeros(){
+        //given
+        // la calculadora y datos de los numeros
+        final double numero1=3;
+        final double numero2=5;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // multiplico los numeros
+        final double resultado = calculadora.multiplicar(numero1,numero2);
+        // then
+        // el resultado deberia ser el esperado.
+        final double expected = numero1 * numero2;
+        assertEquals(expected,resultado);
+    }
+[public void deberia_multiplicar_numeros(){](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/03af8c086b3232ba8e15f74ee76ee114fb20a64f/Calculadora/src/test/java/CalculadoraTest.java#L39-L52)
 
+Y la implantación en el main:
 
+    public double multiplicar(double numero1, double numero2) {
+        return numero1 * numero2;
+    }
+[public double multiplicar(double numero1, double numero2) {](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/d2bfb803e08ab52d2d3cf0236bf5ab5a1f624a82/Calculadora/src/main/java/Calculadora.java#L16-L18)
 
+# DIVISION #
 
+El código en el test: 
 
+    public void deberia_dividir_numeros(){
+        //given
+        // la calculadora y datos de los numeros
+        final double numero1=3;
+        final double numero2=5;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // divido los numeros
+        final double resultado = calculadora.dividir(numero1,numero2);
+        // then
+        // el resultado deberia ser el esperado.
+        final double expected = numero1 / numero2;
+        assertEquals(expected,resultado);
+    }
+[public void deberia_dividir_numeros(){](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/03af8c086b3232ba8e15f74ee76ee114fb20a64f/Calculadora/src/test/java/CalculadoraTest.java#L54-L67)
 
+Y finalmente la implantación del código en el main:
 
+    public double dividir(double numero1, double numero2) {
+        return numero1 / numero2;
+    }
+[public double dividir(double numero1, double numero2) {](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/d2bfb803e08ab52d2d3cf0236bf5ab5a1f624a82/Calculadora/src/main/java/Calculadora.java#L20-L22)
+
+# RAIZ #
+
+    public void deberia_hacer_la_raiz_cuadrada_de_un_numero(){
+        //given
+        // la calculadora y datos de los numeros
+        final double numero1=3;
+        final double indice=2;
+        double t;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // hago la raiz de los numeros
+        final double resultado = calculadora.raiz(numero1);
+        // then
+        // el resultado deberia ser el esperado.
+        double square = calculadora.dividir(numero1,indice);
+
+        do {
+            t = square;
+            square = calculadora.dividir((calculadora.sumar(t, (calculadora.dividir(numero1, t)))),indice);
+
+        } while ((calculadora.restar(t,square)) != 0 );
+        final double expected = square;
+        assertEquals(expected,resultado);
+    }
+[public void deberia_hacer_la_raiz_cuadrada_de_un_numero(){](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/03af8c086b3232ba8e15f74ee76ee114fb20a64f/Calculadora/src/test/java/CalculadoraTest.java#L69-L90)
+
+Quedando la implantación en el main:
+
+    public double raiz(double numero1) {
+        return Math.sqrt(numero1);
+    }
+[public double raiz(double numero1) {](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/d2bfb803e08ab52d2d3cf0236bf5ab5a1f624a82/Calculadora/src/main/java/Calculadora.java#L24-L26)
+
+# EXPONENTE #
+
+    public void deberia_calcular_exponente_numeros(){
+        //given
+        // la calculadora y datos de los numeros
+        final double base=3;
+        double exponente=3;
+        double result=1;
+        final Calculadora calculadora = new Calculadora();
+        //when
+        // hago el exponente de los numeros
+        final double resultado = calculadora.exponente(base,exponente);
+        // then
+        // el resultado deberia ser el esperado.
+        while (exponente != 0){
+            result = calculadora.multiplicar(result,base);
+            exponente = calculadora.restar(exponente,1);
+        }
+        final double expected = result;
+        assertEquals(expected,resultado);
+    }
+[public void deberia_calcular_exponente_numeros(){](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/03af8c086b3232ba8e15f74ee76ee114fb20a64f/Calculadora/src/test/java/CalculadoraTest.java#L92-L110)
+
+Y la última implantación de las operaciones quedaría en el main de la siguiente manera:
+
+    public double exponente(double base, double exponente) {
+        return Math.pow(base, exponente);
+    }
+[public double exponente(double base, double exponente) {](https://github.com/AnaElectroviral/Calculadora_ISA_ActividadGrupal/blob/d2bfb803e08ab52d2d3cf0236bf5ab5a1f624a82/Calculadora/src/main/java/Calculadora.java#L28-L30)
 
 # Resultado de los test con todas las operaciones:
 
@@ -91,8 +200,8 @@ https://es.acervolima.com/calcular-la-potencia-de-un-numero-en-java-sin-usar-el-
 
 Creadores del contenido:
 
-Ana Bermúdez González
+Ana Bermúdez González @AnaElectroviral
 
-Alain Basabe Llovet
+Alain Basabe Llovet @Alain-Basabe
 
-Rafael Gracia Yague
+Rafael Gracia Yague @rgraciay
