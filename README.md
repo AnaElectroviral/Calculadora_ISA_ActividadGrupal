@@ -20,7 +20,7 @@ El test para resolver la suma:
 
     public void deberia_sumar_numeros(){
 
-        //given
+       //given
         // la calculadora y datos de los numeros
         final double numero1=3;
         final double numero2=5;
@@ -37,4 +37,7 @@ Y la implementación del códio final de la suma sería:
 
     public double sumar(double numero1, double numero2) {
         return numero1 + numero2;
-    }
+    } 
+
+# RESTA #
+

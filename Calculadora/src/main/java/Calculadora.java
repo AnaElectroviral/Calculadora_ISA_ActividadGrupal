@@ -1,6 +1,5 @@
-import java.util.*;
 public class Calculadora {
-    public Calculadora(){
+    public Calculadora() {
 
     }
 
@@ -19,9 +18,11 @@ public class Calculadora {
     public double dividir(double numero1, double numero2) {
         return numero1 / numero2;
     }
+
     public double raiz(double numero1) {
         return Math.sqrt(numero1);
     }
+
     public double exponente(double base, double exponente) {
         return Math.pow(base, exponente);
     }
