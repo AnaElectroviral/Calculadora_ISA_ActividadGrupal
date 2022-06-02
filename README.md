@@ -69,3 +69,24 @@ Y la implementación quedaría de la siguiente manera:
 
 # MULTIPLICACIÓN #
 
+
+
+
+
+
+
+
+
+
+# Resultado de los test con todas las operaciones:
+
+![Test Aprobado](https://am4pap001files.storage.live.com/y4mCVS9J7L2DzDAsT3M7uRFt_6la4043khVoXY0_J2n_OSnpE0_k2JBVZ1tnYO2D0Yya1St6-qp7LZQaFE5CmoBZ2lYFCP5C5qtFhpaHvclqj0mSjAWu4rMjB7_uYnB0OPkHwI6JQJBgNs1z94JQsfJra29ru4wo8xKuBIF9VTdvrvF7XQPQKPUq99W0qr93Pno_Hg8kqRViu6VRuAOWhwNENRrBjU0WShvb9_QNa-EiJ4?encodeFailures=1&width=542&height=365)
+
+
+Creadores del contenido:
+
+Ana Bermúdez González
+
+Alain Basabe Llovet
+
+Rafael Gracia Yague
